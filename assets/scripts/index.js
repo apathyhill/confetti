@@ -120,13 +120,11 @@ class Confetto {
 window.addEventListener("load", onLoad);
 
 function generate() {
-    console.log(encodeURIComponent(cipher(document.getElementById("settings-text").value)))
-    let params = new URLSearchParams();
-    params.set("a", encodeURIComponent(cipher(document.getElementById("settings-text").value)));
-    params.set("b", encodeURIComponent(cipher(document.getElementById("settings-confetto-image").value)));
-    params.set("c", encodeURIComponent(cipher(document.getElementById("settings-background-image").value)));
+    let url = new URL(window.location);
+    url.searchParams.set("a", encodeURIComponent(cipher(document.getElementById("settings-text").value)));
+    url.searchParams.set("b", encodeURIComponent(cipher(document.getElementById("settings-confetto-image").value)));
+    url.searchParams.set("c", encodeURIComponent(cipher(document.getElementById("settings-background-image").value)));
 
-    let url = document.location.protocol + document.location.hostname + document.location.pathname + "?" + params.toString();
     window.location = url;
     onLoad();
 }
