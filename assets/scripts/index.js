@@ -32,21 +32,21 @@ function onLoad(event) {
     const params = new URLSearchParams(window.location.search);
 
     let paramText = params.get("a");
-    if (paramText != null) { 
+    if (paramText) { 
         paramText = cipher(decodeURIComponent(paramText));
         elementText.dataset.text = paramText;
         document.getElementById("settings-text").value = paramText;
     }
 
     let paramImageConfetto = params.get("b");
-    if (paramImageConfetto != null) {
+    if (paramImageConfetto) {
         paramImageConfetto = cipher(decodeURIComponent(paramImageConfetto));
         elementRoot.style.setProperty("--confetto-image", `url("${paramImageConfetto}")`); 
         document.getElementById("settings-confetto-image").value = paramImageConfetto;
     }
 
     let paramImageBackground = params.get("c");
-    if (paramImageBackground != null) {
+    if (paramImageBackground) {
         paramImageBackground = cipher(decodeURIComponent(paramImageBackground));
         console.log(paramImageBackground);
         elementRoot.style.setProperty("--background-image", `url("${paramImageBackground}")`); 

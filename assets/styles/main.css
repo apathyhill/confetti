@@ -2,7 +2,8 @@
     --button-size: 10vmin;
     --h1-size: 10vmin;
 
-    --confetto-image: none;
+    --confetto-image: url("https://avatars.githubusercontent.com/u/14889913");
+    --background-image: url("https://avatars.githubusercontent.com/u/14889913");
 }
 
 * {
@@ -28,7 +29,7 @@ body {
     text-align: center;
     overflow: hidden;
     user-select: none;
-    opacity: 0;
+    opacity: 0.25;
     transition: opacity 0.25s ease;
 }
 
@@ -136,7 +137,7 @@ body {
 
 @keyframes confettoFall {
     0% {
-        top: 0vh;
+        top: -5vh;
         transform: translate(-50%, -50%) rotate(var(--confetto-rotate-1));
         opacity: 1;
     }
@@ -171,7 +172,7 @@ body {
 @keyframes backgroundZoom {
     0% {
         opacity: 0;
-        transform: scale(50%) rotate(-0.1turn);
+        transform: scale(50%) rotate(-0.05turn);
     }
 
     50% {
@@ -181,6 +182,6 @@ body {
 
     100% {
         opacity: 0;
-        transform: scale(200%) rotate(0.1turn);
+        transform: scale(200%) rotate(0.05turn);
     }
 }
